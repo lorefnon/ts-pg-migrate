@@ -1,14 +1,15 @@
 {
-  "name": "node-pg-migrate",
-  "version": "6.2.2",
-  "description": "Postgresql database migration management tool for node.js",
+  "name": "ts-pg-migrate",
+  "version": "7.0.0",
+  "description": "Type-safe Postgresql database migration management tool for node.js",
   "author": "Theo Ephraim",
   "contributors": [
+    "Lorefnon <lorefnon@tuta.com>",
     "Salsita Software <jando@salsitasoft.com>",
     "Christopher Quadflieg <chrissi92@hotmail.de>"
   ],
   "bin": {
-    "node-pg-migrate": "bin/node-pg-migrate"
+    "ts-pg-migrate": "bin/ts-pg-migrate"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,12 +38,12 @@
     "node": ">=12.20.0"
   },
   "bugs": {
-    "url": "https://github.com/salsita/node-pg-migrate/issues"
+    "url": "https://github.com/lorefnon/ts-pg-migrate/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/salsita/node-pg-migrate.git"
+    "url": "https://github.com/lorefnon/ts-pg-migrate.git"
   },
   "dependencies": {
     "@types/pg": "^8.0.0",
