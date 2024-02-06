@@ -1,5 +1,14 @@
 # Change Log
 
+## [7.1.0](2024-02-06)
+
+- Support `NULLS NOT DISTINCT` clause in addConstraint
+
+## 7.0.0
+
+- Add support for adding/dropping casts
+- Fix usage of require calls for ESM projects
+
 ## [6.2.1](2022-01-04)
 
 - gh-863: Fix yargs warning [#864](https://github.com/salsita/node-pg-migrate/pull/864)
