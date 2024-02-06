@@ -1,6 +1,6 @@
 # Programmatic API
 
-Alongside with command line, you can use `node-pg-migrate` also programmatically. It exports runner function,
+Alongside with command line, you can use `ts-pg-migrate` also programmatically. It exports runner function,
 which takes options argument with following structure (similar to [command line arguments](cli.md#configuration)):
 
 - `databaseUrl` _[string or object]_ - Connection string or client config which is passed to [new pg.Client](https://node-postgres.com/api/client#constructor)

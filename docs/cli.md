@@ -29,7 +29,7 @@ or
 You could also specify your database url by setting the environment variable `DATABASE_URL`.
 
 ```
-DATABASE_URL=postgres://postgres@localhost/database node-pg-migrate
+DATABASE_URL=postgres://postgres@localhost/database ts-pg-migrate 
 ```
 
 You can specify custom JSON file with config (format is same as for `db` entry of [config](https://www.npmjs.com/package/config) file), for example:
@@ -45,23 +45,23 @@ You can specify custom JSON file with config (format is same as for `db` entry o
 }
 ```
 
-If a .env file exists, it will be loaded using [dotenv](https://www.npmjs.com/package/dotenv) (if installed) when running the node-pg-migrate binary. If the .env file is not on the same level where the command has been called, you can use the `--envPath` option to point to the location of your .env file.
+If a .env file exists, it will be loaded using [dotenv](https://www.npmjs.com/package/dotenv) (if installed) when running the ts-pg-migrate binary. If the .env file is not on the same level where the command has been called, you can use the `--envPath` option to point to the location of your .env file.
 
 Depending on your project's setup, it may make sense to write some custom grunt/gulp/whatever tasks that set this env var and run your migration commands. More on that below.
 
 **The following are the available commands:**
 
-- `node-pg-migrate create {migration-name}` - creates a new migration file with the name you give it. Dashes will replace spaces and underscores, and a timestamp is prepended to your file name.
-- `node-pg-migrate up` - runs all up migrations from the current state.
-- `node-pg-migrate up {N}` - runs N up migrations from the current state.
-- `node-pg-migrate down` - runs a single down migration.
-- `node-pg-migrate down {N}` - runs N down migrations from the current state.
-- `node-pg-migrate redo` - redoes last migration (runs a single down migration, then single up migration).
-- `node-pg-migrate redo {N}` - redoes N last migrations (runs N down migrations, then N up migrations).
+- `ts-pg-migrate create {migration-name}` - creates a new migration file with the name you give it. Dashes will replace spaces and underscores, and a timestamp is prepended to your file name.
+- `ts-pg-migrate up` - runs all up migrations from the current state.
+- `ts-pg-migrate up {N}` - runs N up migrations from the current state.
+- `ts-pg-migrate down` - runs a single down migration.
+- `ts-pg-migrate down {N}` - runs N down migrations from the current state.
+- `ts-pg-migrate redo` - redoes last migration (runs a single down migration, then single up migration).
+- `ts-pg-migrate redo {N}` - redoes N last migrations (runs N down migrations, then N up migrations).
 
 ## Configuration
 
-You can adjust defaults by passing arguments to `node-pg-migrate`:
+You can adjust defaults by passing arguments to `ts-pg-migrate`:
 
 - `config-file` (`f`) - The file with migration JSON config (defaults to undefined)
 - `config-value` - Name of config section with db options (default to `db`)
@@ -88,12 +88,12 @@ You can adjust defaults by passing arguments to `node-pg-migrate`:
 - `verbose` - Print all debug messages like DB queries run (defaults to `true`, to switch it off supply `--no-verbose` on the command line)
 - `reject-unauthorized` - Sets ssl `rejectUnauthorized` parameter. Use for e.g. self-signed certificates on the server. [see](https://node-postgres.com/announcements#2020-02-25) and [see](https://github.com/brianc/node-postgres/issues/2009)
 
-See all by running `node-pg-migrate --help`.
+See all by running `ts-pg-migrate --help`.
 
 Most of the configuration options can be also specified in [config](https://www.npmjs.com/package/config) file.
 
 For SSL connection to DB you can set `PGSSLMODE` environment variable to value from [list](https://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNECT-SSLMODE) other then `disable`.
-e.g. `PGSSLMODE=require node-pg-migrate up` ([pg](https://github.com/brianc/node-postgres/blob/master/CHANGELOG.md#v260) will take it into account)
+e.g. `PGSSLMODE=require ts-pg-migrate up` ([pg](https://github.com/brianc/node-postgres/blob/master/CHANGELOG.md#v260) will take it into account)
 
 ### JSON Configuration
 

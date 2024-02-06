@@ -13,7 +13,7 @@ import {
 import { createSchemalize, getMigrationTableSchema, getSchemas } from './utils'
 import migrateSqlFile from './sqlMigration'
 
-// Random but well-known identifier shared by all instances of node-pg-migrate
+// Random but well-known identifier shared by all instances of node-pg-migrate/ts-pg-migrate
 const PG_MIGRATE_LOCK_ID = 7241865325823964
 
 const idColumn = 'id'

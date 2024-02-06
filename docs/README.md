@@ -1,26 +1,12 @@
-# node-pg-migrate
-
-[![Dependency Status](https://img.shields.io/david/salsita/node-pg-migrate.svg)](https://david-dm.org/salsita/node-pg-migrate)
-[![devDependency Status](https://img.shields.io/david/dev/salsita/node-pg-migrate.svg)](https://david-dm.org/salsita/node-pg-migrate?type=dev)
-[![NPM version](https://img.shields.io/npm/v/node-pg-migrate.svg)](https://www.npmjs.com/package/node-pg-migrate)
-![Downloads](https://img.shields.io/npm/dm/node-pg-migrate.svg?style=flat)
-![Licence](https://img.shields.io/npm/l/node-pg-migrate.svg?style=flat)
-[![Known Vulnerabilities](https://snyk.io/test/github/salsita/node-pg-migrate/badge.svg)](https://snyk.io/test/github/salsita/node-pg-migrate)
-[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
-[![CircleCI](https://img.shields.io/circleci/project/github/salsita/node-pg-migrate.svg)](https://circleci.com/gh/salsita/workflows/node-pg-migrate)
+# ts-pg-migrate
 
 Node.js database migration management built exclusively for postgres. (But can also be used for other DBs conforming to SQL standard - e.g. [CockroachDB](https://github.com/cockroachdb/cockroach).)
-Started by [Theo Ephraim](https://github.com/theoephraim/), now maintained by [Salsita Software](https://www.salsitasoft.com/).
-
-### Looking for v3 docs?
-
-see [v3 branch](https://github.com/salsita/node-pg-migrate/tree/v3).
 
 ## Installation
 
-    $ npm install node-pg-migrate pg
+    $ npm install @lorefnon/ts-pg-migrate pg
 
-Installing this module adds a runnable file into your `node_modules/.bin` directory. If installed globally (with the -g option), you can run `node-pg-migrate` and if not, you can run `./node_modules/.bin/node-pg-migrate`
+Installing this module adds a runnable file into your `node_modules/.bin` directory. If installed globally (with the -g option), you can run `ts-pg-migrate` and if not, you can run `./node_modules/.bin/ts-pg-migrate`
 
 It will also install [`pg`](https://node-postgres.com/) library as it is peer dependency used for migrations.
 
@@ -28,7 +14,7 @@ It will also install [`pg`](https://node-postgres.com/) library as it is peer de
 
 ### Quick Example
 
-Add `"migrate": "node-pg-migrate"` to `scripts` section of `package.json` so you are able to quickly run commands.
+Add `"migrate": "ts-pg-migrate"` to `scripts` section of `package.json` so you are able to quickly run commands.
 
 Run `npm run migrate create my first migration`. It will create file `xxx_my-first-migration.js` in `migrations` folder.
 Open it and change contents to:

@@ -1,6 +1,6 @@
 # Defining Migrations
 
-When you run `node-pg-migrate create` a new migration file is created that looks like this:
+When you run `ts-pg-migrate create` a new migration file is created that looks like this:
 
 ```javascript
 exports.shorthands = undefined
@@ -23,7 +23,7 @@ Calling the migration functions on `pgm` doesn't actually migrate your database.
 
 ### Automatic Down Migrations
 
-If `exports.down` is not present in a migration, node-pg-migrate will try to automatically infer the operations that make up the down migration by reversing the operations of the up migration. Only some operations have automatically inferrable equivalents (details below on each operation). Sometimes, migrations are destructive and cannot be rolled back. In this case, you can set `exports.down = false` to tell node-pg-migrate that the down migration is impossible.
+If `exports.down` is not present in a migration, ts-pg-migrate will try to automatically infer the operations that make up the down migration by reversing the operations of the up migration. Only some operations have automatically inferrable equivalents (details below on each operation). Sometimes, migrations are destructive and cannot be rolled back. In this case, you can set `exports.down = false` to tell ts-pg-migrate that the down migration is impossible.
 
 ### Async Migrations
 
@@ -78,7 +78,7 @@ type Name = string | { schema: string; name: string }
 
 ### Locking
 
-`node-pg-migrate` automatically checks if no other migration is running. To do so, it uses an
+`ts-pg-migrate` automatically checks if no other migration is running. To do so, it uses an
 [advisory lock](https://www.postgresql.org/docs/current/static/explicit-locking.html#id-1.5.12.6.9.2)
 (see [#239](https://github.com/salsita/node-pg-migrate/pull/239)).
 Lock is held for duration of DB session, so if migration scripts hangs up, you need to kill it,
