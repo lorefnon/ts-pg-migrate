@@ -1,5 +1,9 @@
 # Change Log
 
+## [7.1.1](2024-02-06)
+
+- Update migration template to use new name
+
 ## [7.1.0](2024-02-06)
 
 - Support `NULLS NOT DISTINCT` clause in addConstraint
