@@ -48,9 +48,14 @@ export interface ForeignKeyOptions extends ReferencesOptions {
   columns: Name | Name[]
 }
 
+export interface UniqueConstraintOptions {
+  nullsNotDistinct?: boolean
+  columns: Name | Name[]
+}
+
 export interface ConstraintOptions {
   check?: string | string[]
-  unique?: Name | Array<Name | Name[]>
+  unique?: Name | Name[] | UniqueConstraintOptions
   primaryKey?: Name | Name[]
   foreignKeys?: ForeignKeyOptions | ForeignKeyOptions[]
   exclude?: string

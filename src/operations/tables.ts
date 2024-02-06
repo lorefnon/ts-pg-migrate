@@ -19,6 +19,7 @@ import {
   Like,
   ColumnDefinition,
   ColumnDefinitions,
+  UniqueConstraintOptions,
 } from './tablesTypes'
 import { Name } from './generalTypes'
 import { FunctionParamType } from './functionsTypes'
@@ -175,8 +176,17 @@ const parseColumns = (
   }
 }
 
+const parseUniqConstraints = (uniq: ConstraintOptions['unique']): UniqueConstraintOptions | undefined => {
+  if (typeof uniq === 'string') return { columns: [uniq] }
+  if (!uniq) return uniq
+  if (Array.isArray(uniq)) return { columns: uniq }
+  if ('name' in uniq) return { columns: uniq }
+  return uniq
+}
+
 const parseConstraints = (table: Name, options: ConstraintOptions, optionName: string | null, literal: Literal) => {
-  const { check, unique, primaryKey, foreignKeys, exclude, deferrable, comment }: ConstraintOptions = options
+  const { check, primaryKey, foreignKeys, exclude, deferrable, comment }: ConstraintOptions = options
+  const unique = parseUniqConstraints(options.unique)
   const tableName = typeof table === 'object' ? table.name : table
   let constraints = []
   const comments = []
@@ -192,12 +202,13 @@ const parseConstraints = (table: Name, options: ConstraintOptions, optionName: s
     }
   }
   if (unique) {
-    const uniqueArray: Array<Name | Name[]> = Array.isArray(unique) ? unique : [unique]
+    const uniqueArray: Array<Name | Name[]> = Array.isArray(unique.columns) ? unique.columns : [unique.columns]
     const isArrayOfArrays = uniqueArray.some((uniqueSet) => Array.isArray(uniqueSet))
     ;((isArrayOfArrays ? uniqueArray : [uniqueArray]) as Array<Name | Name[]>).forEach((uniqueSet) => {
       const cols = Array.isArray(uniqueSet) ? uniqueSet : [uniqueSet]
       const name = literal(optionName || `${tableName}_uniq_${cols.join('_')}`)
-      constraints.push(`CONSTRAINT ${name} UNIQUE (${cols.map(literal).join(', ')})`)
+      const nndClause = unique.nullsNotDistinct ? 'NULLS NOT DISTINCT ' : ''
+      constraints.push(`CONSTRAINT ${name} UNIQUE ${nndClause}(${cols.map(literal).join(', ')})`)
     })
   }
   if (primaryKey) {
