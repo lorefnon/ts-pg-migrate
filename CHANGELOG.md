@@ -1,5 +1,9 @@
 # Change Log
 
+## [7.2.1](2024-02-07)
+
+- Update dependencies
+
 ## [7.1.1](2024-02-06)
 
 - Update migration template to use new name
