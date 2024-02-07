@@ -9,8 +9,8 @@ dependencies:
     specifier: ^8.11.0
     version: 8.11.0
   decamelize:
-    specifier: ^6.0.0
-    version: 6.0.0
+    specifier: ^5.0.0
+    version: 5.0.1
   mkdirp:
     specifier: ~3.0.1
     version: 3.0.1
@@ -1112,9 +1112,9 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /decamelize@6.0.0:
-    resolution: {integrity: sha512-Fv96DCsdOgB6mdGl67MT5JaTNKRzrzill5OH5s8bjYJXVlcXyPYGyPsUkWyGV5p1TXI5esYIYMMeDJL0hEIwaA==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+  /decamelize@5.0.1:
+    resolution: {integrity: sha512-VfxadyCECXgQlkoEAjeghAr5gY3Hf+IKjKb+X8tGVDtveCjN+USwprd2q3QXBR9T1+x2DG0XZF5/w+7HAtSaXA==}
+    engines: {node: '>=10'}
     dev: false
 
   /decompress-response@3.3.0:
