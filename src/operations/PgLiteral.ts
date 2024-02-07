@@ -7,7 +7,7 @@ export default class PgLiteral {
 
   public readonly literal = true
 
-  // eslint-disable-next-line no-useless-constructor
+  // eslint-disable-next-line no-useless-constructor, no-empty-function
   constructor(public readonly value: string) {}
 
   toString(): string {

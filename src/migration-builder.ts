@@ -378,4 +378,3 @@ export default class MigrationBuilderImpl implements MigrationBuilder {
     return this._REVERSE_MODE ? this._steps.slice().reverse() : this._steps
   }
 }
-/* eslint-enable security/detect-non-literal-fs-filename */

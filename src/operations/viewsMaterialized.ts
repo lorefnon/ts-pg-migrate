@@ -22,7 +22,7 @@ export {
 
 const dataClause = (data?: boolean) => (data !== undefined ? ` WITH${data ? '' : ' NO'} DATA` : '')
 const storageParameterStr =
-  <T extends Nullable<StorageParameters>, K extends keyof T>(storageParameters: T) =>
+  <T extends Nullable<StorageParameters>, K extends keyof T & string>(storageParameters: T) =>
   (key: K) => {
     const value = storageParameters[key] === true ? '' : ` = ${storageParameters[key]}`
     return `${key}${value}`

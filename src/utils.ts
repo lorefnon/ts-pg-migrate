@@ -25,7 +25,7 @@ export const createSchemalize = (shouldDecamelize: boolean, shouldQuote: boolean
 export class StringIdGenerator {
   private ids: number[] = [0]
 
-  // eslint-disable-next-line no-useless-constructor
+  // eslint-disable-next-line no-useless-constructor, no-empty-function
   constructor(private readonly chars = 'abcdefghijklmnopqrstuvwxyz') {}
 
   next() {
@@ -89,8 +89,8 @@ export const createTransformer = (literal: Literal) => (s: string, d?: { [key: s
       v === undefined
         ? ''
         : typeof v === 'string' || (typeof v === 'object' && v !== null && 'name' in v)
-        ? literal(v)
-        : String(escapeValue(v)),
+          ? literal(v)
+          : String(escapeValue(v)),
     )
   }, s)
 

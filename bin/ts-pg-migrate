@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* eslint-disable strict, no-console */
+/* eslint-disable strict, no-console, @typescript-eslint/no-var-requires */
 
 'use strict'
 
@@ -257,7 +257,6 @@ function readTsconfig() {
     const json5 = tryRequire('json5')
 
     try {
-      // eslint-disable-next-line security/detect-non-literal-fs-filename
       const config = fs.readFileSync(path.resolve(process.cwd(), tsconfigPath), { encoding: 'utf-8' })
       tsconfig = json5 ? json5.parse(config) : JSON.parse(config)
       if (tsconfig['ts-node']) {

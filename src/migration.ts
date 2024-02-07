@@ -126,12 +126,7 @@ export class Migration implements RunMigration {
 
     // copy the default migration template to the new file location
     await new Promise((resolve, reject) => {
-      // eslint-disable-next-line security/detect-non-literal-fs-filename
-      fs.createReadStream(templateFileName)
-        // eslint-disable-next-line security/detect-non-literal-fs-filename
-        .pipe(fs.createWriteStream(newFile))
-        .on('close', resolve)
-        .on('error', reject)
+      fs.createReadStream(templateFileName).pipe(fs.createWriteStream(newFile)).on('close', resolve).on('error', reject)
     })
 
     return newFile

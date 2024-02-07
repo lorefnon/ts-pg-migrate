@@ -6,7 +6,7 @@ import { Nullable } from './generalTypes'
 export { CreateView, DropView, AlterView, AlterViewColumn, RenameView, ViewOptions }
 
 const viewOptionStr =
-  <T extends Nullable<ViewOptions>, K extends keyof T>(options: T) =>
+  <T extends Nullable<ViewOptions>, K extends keyof T & string>(options: T) =>
   (key: K) => {
     const value = options[key] === true ? '' : ` = ${options[key]}`
     return `${key}${value}`
