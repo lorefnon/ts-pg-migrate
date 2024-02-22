@@ -1,5 +1,9 @@
 # Change Log
 
+## [7.3.0](2024-02-23)
+
+- Expose `enableReverseMode` to programmatically revert one migration in another.
+
 ## [7.2.1](2024-02-07)
 
 - Update dependencies

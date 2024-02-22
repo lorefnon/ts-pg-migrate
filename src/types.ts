@@ -115,7 +115,8 @@ export interface MigrationBuilder {
   refreshMaterializedView: (...args: Parameters<mViews.RefreshMaterializedView>) => void
   sql: (...args: Parameters<other.Sql>) => void
   func: (sql: string) => PgLiteral
-  noTransaction: () => void
+  noTransaction: () => this
+  enableReverseMode: () => this
   db: DB
 }
 

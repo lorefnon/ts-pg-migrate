@@ -1,6 +1,6 @@
 {
   "name": "@lorefnon/ts-pg-migrate",
-  "version": "7.2.1",
+  "version": "7.3.0",
   "description": "Type-safe Postgresql database migration management tool for node.js",
   "author": "Theo Ephraim",
   "contributors": [

@@ -11,9 +11,6 @@ dependencies:
   decamelize:
     specifier: ^5.0.0
     version: 5.0.1
-  mkdirp:
-    specifier: ~3.0.1
-    version: 3.0.1
   yargs:
     specifier: ~17.7.2
     version: 17.7.2
@@ -25,9 +22,6 @@ devDependencies:
   '@types/chai-as-promised':
     specifier: 7.1.8
     version: 7.1.8
-  '@types/mkdirp':
-    specifier: 1.0.2
-    version: 1.0.2
   '@types/mocha':
     specifier: 10.0.6
     version: 10.0.6
@@ -335,12 +329,6 @@ packages:
 
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
-    dependencies:
-      '@types/node': 20.11.16
-    dev: true
-
-  /@types/mkdirp@1.0.2:
-    resolution: {integrity: sha512-o0K1tSO0Dx5X6xlU5F1D6625FawhC3dU3iqr25lluNv/+/QIVH8RLNEiVokgIZo+mz+87w/3Mkg/VvQS+J51fQ==}
     dependencies:
       '@types/node': 20.11.16
     dev: true
@@ -2687,12 +2675,6 @@ packages:
     resolution: {integrity: sha512-jYofLM5Dam9279rdkWzqHozUo4ybjdZmCsDHePy5V/PbBcVMiSZR97gmAy45aqi8CK1lG2ECd356FU86avfwUQ==}
     engines: {node: '>=16 || 14 >=14.17'}
     dev: true
-
-  /mkdirp@3.0.1:
-    resolution: {integrity: sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dev: false
 
   /mocha@10.2.0:
     resolution: {integrity: sha512-IDY7fl/BecMwFHzoqF2sg/SHHANeBoMMXFlS9r0OXKDssYE1M5O43wUY/9BVPeIvfH2zmEbBfseqN9gBQZzXkg==}
